@@ -1,0 +1,22 @@
+.s-body {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.s-table {
+    width: 45vw;
+    margin: 1px solid black;
+}
+
+.s-form {
+    width: 45vw;
+    border-right: 1px solid teal;
+    padding-right: 20px;
+}
+
+.s-delete {
+    width: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}

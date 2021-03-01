@@ -1,0 +1,61 @@
+<form [formGroup]="form" class="s-body">
+    <div class="s-form">
+        <div class="form-group">
+            <label for="fname">First Name</label>
+            <input formControlName="firstname" id="fname" type="text" class="form-control">
+            <!-- <div *ngIf="firstname" class="alert alert-danger">
+           First Name is required
+       </div> -->
+        </div>
+        <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input formControlName="lastname" id="lname" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="cnumber">Contact Number</label>
+            <input formControlName="contact" id="cnumber" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input formControlName="dob" id="dob" type="date" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input formControlName="city" id="city" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="code">Pincode</label>
+            <input formControlName="pin" id="code" type="text" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="details()">Submit</button>
+    </div>
+    <table class="table s-table" *ngIf="list.length>0">
+        <tr>
+            <th><button class="btn btn-light" (click)="sort('firstname')">First Name</button></th>
+            <th><button class="btn btn-light" (click)="sort('lastname')"> Last Name</button></th>
+            <th><button class="btn btn-light" (click)="sort('contact')">Contact Number</button></th>
+            <th><button class="btn btn-light" (click)="sort('dob')">DOB</button></th>
+            <th><button class="btn btn-light" (click)="sort('city')">City</button></th>
+            <th><button class="btn btn-light" (click)="sort('pin')">Pincode</button></th>
+        </tr>
+        <tr *ngFor="let l of list">
+            <td> {{ l.firstname }}</td>
+            <td> {{ l.lastname }}</td>
+            <td> {{ l.contact }}</td>
+            <td> {{ l.dob | date }}</td>
+            <td> {{ l.city }}</td>
+            <td> {{ l.pin }}</td>
+
+        </tr>
+
+    </table>
+
+</form>
+
+<form [formGroup]="form2" class="s-delete">
+    <div class="form-group">
+        <label for="delname">Enter name to be deleted</label>
+        <input formControlName="delname" id="delname" type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-danger" (click)="delete()">Delete</button>
+</form>
